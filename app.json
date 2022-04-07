@@ -45,6 +45,10 @@
         "ZAGL_KEY": {
             "description": "Get API key from za.gl",
             "required": false
+        },
+        "YOUSHORT_KEY": {
+            "description": "Get API key from youshort.me",
+            "required": false
         }
     },
     "addons": [],
