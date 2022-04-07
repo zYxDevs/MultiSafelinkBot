@@ -1,0 +1,58 @@
+{
+    "name": "MultiSafelinkBot",
+    "description": "Make short a link more easy and get fast money.",
+    "keywords": [
+        "telegram",
+        "bot",
+        "safelink"
+    ],
+    "website": "https://github.com/zYxDevs",
+    "repository": "https://github.com/zYxDevs/MultiSafelinkBot",
+    "suscess_url": "https://cyberindonesia001.xyz",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token, Get this value from t.me/botfather",
+            "value": ""
+        },
+        "API_ID": {
+            "description": "Get this value from my.telegram.org",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org",
+            "value": ""
+        },
+        "AUTH_USERS": {
+            "description": "List id of allowed user to use your bot, separated by space",
+            "value": ""
+        },
+        "SNACKLINK_KEY": {
+            "description": "Get API key from snacklink.id",
+            "required": false
+        },
+        "ADTIVAL_KEY": {
+            "description": "Get API key from adtival.network",
+            "required": false
+        },
+        "SHRINKADS_KEY": {
+            "description": "Get API key from shrinkads.com",
+            "required": false
+        },
+        "DLINK_KEY": {
+            "description": "Get API key from droplink.co",
+            "required": false
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
