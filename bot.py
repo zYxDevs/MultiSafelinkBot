@@ -11,6 +11,7 @@ SNACKLINK_KEY = environ.get("SNACKLINK_KEY", None)
 ADTIVAL_KEY = environ.get("ADTIVAL_KEY", None)
 SHRINKADS_KEY = environ.get("SHRINKADS_KEY", None)
 ZAGL_KEY = environ.get("ZAGL_KEY", None)
+YOUSHORT_KEY = environ.get("YOUSHORT_KEY", None)
 
 
 bot = Client(
@@ -154,12 +155,37 @@ async def sads_handler(_, message):
         )
     if ZAGL_KEY is None:
         return await message.reply(
-            "Get `ZAGL_KEY` from zagl and fill it on vars!"
+            "Get `ZAGL_KEY` from za.gl and fill it on vars!"
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
-        r = get(f"https://za.gl/api?api={SHRINKADS_KEY}&url={link}").json()
+        r = get(f"https://za.gl/api?api={ZAGL_KEY}&url={link}").json()
+        short_link = r["shortenedUrl"]
+        return await message.reply(
+            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            quote=True,
+        )
+    except Exception as e:
+        return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
+
+
+@bot.on_message(filters.command("yshort") & ~filters.edited)
+async def sads_handler(_, message):
+    if len(message.command) < 2:
+        return await message.reply("Give me url to short!")
+    if message.from_user.id not in AUTH_USERS:
+        return await message.reply(
+            "You are not allowed to use me!\n\nContact @Yoga_CIC"
+        )
+    if YOUSHORT_KEY is None:
+        return await message.reply(
+            "Get `YOUSHORT_KEY` from youshort.me and fill it on vars!"
+        )
+    link = message.text.split(None, 1)[1].strip()
+    link = link.replace(" ", "")
+    try:
+        r = get(f"https://youshort.me/api?api={YOUSHORT_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
             f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
