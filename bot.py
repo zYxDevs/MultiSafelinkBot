@@ -25,7 +25,7 @@ bot = Client(
 @bot.on_message(filters.command(["start", "help"]) & filters.private)
 async def start(_, message):
     await message.reply(
-        f""""**Hi {message.chat.first_name}!**
+        f"""**Hi {message.chat.first_name}!**
 I'm MultiSafelinkBot. Just send me a link with some command below.
 
 Here is my command:
