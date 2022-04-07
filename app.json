@@ -8,7 +8,7 @@
     ],
     "website": "https://github.com/zYxDevs",
     "repository": "https://github.com/zYxDevs/MultiSafelinkBot",
-    "suscess_url": "https://cyberindonesia001.xyz",
+    "success_url": "https://cyberindonesia001.xyz",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token, Get this value from t.me/botfather",
