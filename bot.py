@@ -206,7 +206,7 @@ async def sads_handler(_, message):
         )
     if PFL_KEY is None:
         return await message.reply(
-            "Get `PFL_KEY` from youshort.me and fill it on vars!"
+            "Get `PFL_KEY` from paid4link.com and fill it on vars!"
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
