@@ -10,6 +10,7 @@ DLINK_KEY = environ.get("DLINK_KEY", None)
 SNACKLINK_KEY = environ.get("SNACKLINK_KEY", None)
 ADTIVAL_KEY = environ.get("ADTIVAL_KEY", None)
 SHRINKADS_KEY = environ.get("SHRINKADS_KEY", None)
+ZAGL_KEY = environ.get("ZAGL_KEY", None)
 
 
 bot = Client(
@@ -33,6 +34,7 @@ Here is my command:
 /adtival <link> - Get a shortlink using adtival/wtspw
 /snack <link> - Get a shortlink using snacklink
 /sads <link> - Get a shortlink using shrinkads
+/zagl <link> - Get a shortlink using zagl
 
 More features will added soon
 
@@ -127,12 +129,37 @@ async def sads_handler(_, message):
         )
     if SHRINKADS_KEY is None:
         return await message.reply(
-            "Get `SHRINKADS_KEY` from snacklink.id and fill it on vars!"
+            "Get `SHRINKADS_KEY` from shrinkads.com and fill it on vars!"
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
         r = get(f"https://www.shrinkads.com/api?api={SHRINKADS_KEY}&url={link}").json()
+        short_link = r["shortenedUrl"]
+        return await message.reply(
+            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            quote=True,
+        )
+    except Exception as e:
+        return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
+
+
+@bot.on_message(filters.command("zagl") & ~filters.edited)
+async def sads_handler(_, message):
+    if len(message.command) < 2:
+        return await message.reply("Give me url to short!")
+    if message.from_user.id not in AUTH_USERS:
+        return await message.reply(
+            "You are not allowed to use me!\n\nContact @Yoga_CIC"
+        )
+    if ZAGL_KEY is None:
+        return await message.reply(
+            "Get `ZAGL_KEY` from zagl and fill it on vars!"
+        )
+    link = message.text.split(None, 1)[1].strip()
+    link = link.replace(" ", "")
+    try:
+        r = get(f"https://za.gl/api?api={SHRINKADS_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
             f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
