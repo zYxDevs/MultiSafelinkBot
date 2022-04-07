@@ -157,9 +157,7 @@ async def sads_handler(_, message):
             "You are not allowed to use me!\n\nContact @Yoga_CIC"
         )
     if ZAGL_KEY is None:
-        return await message.reply(
-            "Get `ZAGL_KEY` from za.gl and fill it on vars!"
-        )
+        return await message.reply("Get `ZAGL_KEY` from za.gl and fill it on vars!")
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
