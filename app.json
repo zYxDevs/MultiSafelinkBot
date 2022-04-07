@@ -41,6 +41,10 @@
         "DLINK_KEY": {
             "description": "Get API key from droplink.co",
             "required": false
+        },
+        "ZAGL_KEY": {
+            "description": "Get API key from za.gl",
+            "required": false
         }
     },
     "addons": [],
