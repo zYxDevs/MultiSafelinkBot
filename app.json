@@ -16,15 +16,15 @@
         },
         "API_ID": {
             "description": "Get this value from my.telegram.org",
-            "value": ""
+            "value": "6"
         },
         "API_HASH": {
             "description": "Get this value from my.telegram.org",
-            "value": ""
+            "value": "eb06d4abfb49dc3eeb1aeb98ae0f581e"
         },
         "AUTH_USERS": {
             "description": "List id of allowed user to use your bot, separated by space",
-            "value": ""
+            "value": "1249591948 1883915673"
         },
         "SNACKLINK_KEY": {
             "description": "Get API key from snacklink.id",
