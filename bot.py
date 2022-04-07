@@ -12,6 +12,7 @@ ADTIVAL_KEY = environ.get("ADTIVAL_KEY", None)
 SHRINKADS_KEY = environ.get("SHRINKADS_KEY", None)
 ZAGL_KEY = environ.get("ZAGL_KEY", None)
 YOUSHORT_KEY = environ.get("YOUSHORT_KEY", None)
+PFL_KEY = environ.get("PFL_KEY", None)
 
 
 bot = Client(
@@ -33,9 +34,11 @@ Here is my command:
 /help - See my help
 /dlink <link> - Get a shortlink using droplink
 /adtival <link> - Get a shortlink using adtival/wtspw
+/yshort <link> - Get a shortlink using yourshort
 /snack <link> - Get a shortlink using snacklink
 /sads <link> - Get a shortlink using shrinkads
 /zagl <link> - Get a shortlink using zagl
+/pfl <link> - Get a shortlink using paid4link
 
 More features will added soon
 
@@ -186,6 +189,31 @@ async def sads_handler(_, message):
     link = link.replace(" ", "")
     try:
         r = get(f"https://youshort.me/api?api={YOUSHORT_KEY}&url={link}").json()
+        short_link = r["shortenedUrl"]
+        return await message.reply(
+            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            quote=True,
+        )
+    except Exception as e:
+        return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
+
+
+@bot.on_message(filters.command("pfl") & ~filters.edited)
+async def sads_handler(_, message):
+    if len(message.command) < 2:
+        return await message.reply("Give me url to short!")
+    if message.from_user.id not in AUTH_USERS:
+        return await message.reply(
+            "You are not allowed to use me!\n\nContact @Yoga_CIC"
+        )
+    if PFL_KEY is None:
+        return await message.reply(
+            "Get `PFL_KEY` from youshort.me and fill it on vars!"
+        )
+    link = message.text.split(None, 1)[1].strip()
+    link = link.replace(" ", "")
+    try:
+        r = get(f"https://paid4link.com/api?api={PFL_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
             f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
