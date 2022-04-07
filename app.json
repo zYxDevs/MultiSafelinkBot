@@ -49,6 +49,10 @@
         "YOUSHORT_KEY": {
             "description": "Get API key from youshort.me",
             "required": false
+        },
+        "PFL_KEY": {
+            "description": "Get API key from paid4link.com",
+            "required": false
         }
     },
     "addons": [],
