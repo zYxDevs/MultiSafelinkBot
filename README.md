@@ -13,3 +13,9 @@ Make short link by using many safelink API services.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `AUTH_USERS`: Authorized users list
+
+##### Have an Idea?
+
+Tell me on [telegram](https://t.me/Yoga_CIC) or open an [issue](https://github.com/zYxDevs/MultiSafelinkBot/issues).
+
+#### Copyright (c) 2022 by [@zYxDevs](https://github.com/zYxDevs)
