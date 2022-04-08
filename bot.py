@@ -23,13 +23,13 @@ bot = Client(
 )
 
 
-@bot.on_message(filters.command(["start", "help"]) & filters.private)
+@bot.on_message(filters.command(["start", "help"]) & ~filters.edited)
 async def start(_, message):
     await message.reply(
         f"""**Hi {message.chat.first_name}!**
-I'm MultiSafelinkBot. Just send me a link with some command below.
+I'm **MultiSafelinkBot**, Just send me a link with some command below.
 
-Here is my command:
+**Here is my command:**
 /start - Start me
 /help - See my help
 /dlink <link> - Get a shortlink using droplink
@@ -40,12 +40,13 @@ Here is my command:
 /zagl <link> - Get a shortlink using zagl
 /pfl <link> - Get a shortlink using paid4link
 
-More features will added soon
+More features will added soon:)
 
-Maintenance by @Yoga_CIC
 **Join here:**
 @YBotsSupport
-@SpreadNetworks"""
+@SpreadNetworks
+
+Maintenance by @Yoga_CIC"""
     )
 
 
@@ -67,7 +68,7 @@ async def adtival_handler(_, message):
         r = get(f"https://www.adtival.network/api?api={ADTIVAL_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -92,7 +93,7 @@ async def dlink_handler(_, message):
         r = get(f"https://droplink.co/api?api={DLINK_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -116,7 +117,7 @@ async def snack_handler(_, message):
     try:
         short_link = "https://ponselharian.com/st/?api={SNACKLINK_KEY}&url={link}"
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -141,7 +142,7 @@ async def sads_handler(_, message):
         r = get(f"https://www.shrinkads.com/api?api={SHRINKADS_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -164,7 +165,7 @@ async def sads_handler(_, message):
         r = get(f"https://za.gl/api?api={ZAGL_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -189,7 +190,7 @@ async def sads_handler(_, message):
         r = get(f"https://youshort.me/api?api={YOUSHORT_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
@@ -214,7 +215,7 @@ async def sads_handler(_, message):
         r = get(f"https://paid4link.com/api?api={PFL_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
-            f"""Click to copy - <code>{short_link}</code>.\nHere is your [short link]({short_link})""",
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
         )
     except Exception as e:
