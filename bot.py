@@ -62,7 +62,8 @@ async def adtival_handler(_, message):
         )
     if ADTIVAL_KEY is None:
         return await message.reply(
-            "Get `ADTIVAL_KEY` from [adtival](https://www.adtival.network/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `ADTIVAL_KEY` from [adtival](https://www.adtival.network/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -88,7 +89,8 @@ async def dlink_handler(_, message):
         )
     if DLINK_KEY is None:
         return await message.reply(
-            "Get `DLINK_KEY` from [droplink](https://droplink.co/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `DLINK_KEY` from [droplink](https://droplink.co/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -114,7 +116,8 @@ async def snack_handler(_, message):
         )
     if SNACKLINK_KEY is None:
         return await message.reply(
-            "Get `SNACKLINK_KEY` from [snacklink](https://snacklink.co/ref/AdamLuwis) and fill it on vars!", disable_web_page_preview=True
+            "Get `SNACKLINK_KEY` from [snacklink](https://snacklink.co/ref/AdamLuwis) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -139,7 +142,8 @@ async def sads_handler(_, message):
         )
     if SHRINKADS_KEY is None:
         return await message.reply(
-            "Get `SHRINKADS_KEY` from [shrinkads](https://www.shrinkads.com/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `SHRINKADS_KEY` from [shrinkads](https://www.shrinkads.com/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -164,7 +168,10 @@ async def zagl_handler(_, message):
             "You are not allowed to use me!\n\nContact @Yoga_CIC"
         )
     if ZAGL_KEY is None:
-        return await message.reply("Get `ZAGL_KEY` from [zagl](https://zee.gl/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True)
+        return await message.reply(
+            "Get `ZAGL_KEY` from [zagl](https://zee.gl/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
+        )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
@@ -189,7 +196,8 @@ async def yshort_handler(_, message):
         )
     if YOUSHORT_KEY is None:
         return await message.reply(
-            "Get `YOUSHORT_KEY` from [youshort](https://youshort.me/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `YOUSHORT_KEY` from [youshort](https://youshort.me/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -215,7 +223,8 @@ async def pfl_handler(_, message):
         )
     if PFL_KEY is None:
         return await message.reply(
-            "Get `PFL_KEY` from [paid4link](https://paid4link.com/ref/zYxDevs) and fill it on vars!", disable_web_page_preview=True
+            "Get `PFL_KEY` from [paid4link](https://paid4link.com/ref/zYxDevs) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -241,7 +250,8 @@ async def searn_handler(_, message):
         )
     if SEARN_KEY is None:
         return await message.reply(
-            "Get `SEARN_KEY` from [shrinkearn](https://shrinkearn.com/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `SEARN_KEY` from [shrinkearn](https://shrinkearn.com/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -267,7 +277,8 @@ async def cfly_handler(_, message):
         )
     if CFLY_KEY is None:
         return await message.reply(
-            "Get `CFLY_KEY` from [clicksfly](https://clicksfly.com/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
+            "Get `CFLY_KEY` from [clicksfly](https://clicksfly.com/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
