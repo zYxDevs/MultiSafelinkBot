@@ -150,7 +150,7 @@ async def sads_handler(_, message):
 
 
 @bot.on_message(filters.command("zagl") & ~filters.edited)
-async def sads_handler(_, message):
+async def zagl_handler(_, message):
     if len(message.command) < 2:
         return await message.reply("Give me url to short!")
     if message.from_user.id not in AUTH_USERS:
@@ -173,7 +173,7 @@ async def sads_handler(_, message):
 
 
 @bot.on_message(filters.command("yshort") & ~filters.edited)
-async def sads_handler(_, message):
+async def yshort_handler(_, message):
     if len(message.command) < 2:
         return await message.reply("Give me url to short!")
     if message.from_user.id not in AUTH_USERS:
@@ -198,7 +198,7 @@ async def sads_handler(_, message):
 
 
 @bot.on_message(filters.command("pfl") & ~filters.edited)
-async def sads_handler(_, message):
+async def pfl_handler(_, message):
     if len(message.command) < 2:
         return await message.reply("Give me url to short!")
     if message.from_user.id not in AUTH_USERS:
