@@ -60,7 +60,7 @@ async def adtival_handler(_, message):
         )
     if ADTIVAL_KEY is None:
         return await message.reply(
-            "Get `ADTIVAL_KEY` from adtival.network and fill it on vars!"
+            "Get `ADTIVAL_KEY` from [adtival](https://www.adtival.network/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -70,6 +70,7 @@ async def adtival_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -85,7 +86,7 @@ async def dlink_handler(_, message):
         )
     if DLINK_KEY is None:
         return await message.reply(
-            "Get `DLINK_KEY` from droplink.co and fill it on vars!"
+            "Get `DLINK_KEY` from [droplink](https://droplink.co/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -95,6 +96,7 @@ async def dlink_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -110,7 +112,7 @@ async def snack_handler(_, message):
         )
     if SNACKLINK_KEY is None:
         return await message.reply(
-            "Get `SNACKLINK_KEY` from snacklink.id and fill it on vars!"
+            "Get `SNACKLINK_KEY` from [snacklink](https://snacklink.co/ref/AdamLuwis) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -119,6 +121,7 @@ async def snack_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -134,7 +137,7 @@ async def sads_handler(_, message):
         )
     if SHRINKADS_KEY is None:
         return await message.reply(
-            "Get `SHRINKADS_KEY` from shrinkads.com and fill it on vars!"
+            "Get `SHRINKADS_KEY` from [shrinkads](https://www.shrinkads.com/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -144,6 +147,7 @@ async def sads_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -158,7 +162,7 @@ async def zagl_handler(_, message):
             "You are not allowed to use me!\n\nContact @Yoga_CIC"
         )
     if ZAGL_KEY is None:
-        return await message.reply("Get `ZAGL_KEY` from za.gl and fill it on vars!")
+        return await message.reply("Get `ZAGL_KEY` from [zagl](https://zee.gl/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True)
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
@@ -167,6 +171,7 @@ async def zagl_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -182,7 +187,7 @@ async def yshort_handler(_, message):
         )
     if YOUSHORT_KEY is None:
         return await message.reply(
-            "Get `YOUSHORT_KEY` from youshort.me and fill it on vars!"
+            "Get `YOUSHORT_KEY` from [youshort](https://youshort.me/ref/YogaPranata) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -192,6 +197,7 @@ async def yshort_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
@@ -207,7 +213,7 @@ async def pfl_handler(_, message):
         )
     if PFL_KEY is None:
         return await message.reply(
-            "Get `PFL_KEY` from paid4link.com and fill it on vars!"
+            "Get `PFL_KEY` from [paid4link](https://paid4link.com/ref/zYxDevs) and fill it on vars!", disable_web_page_preview=True
         )
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
@@ -217,6 +223,7 @@ async def pfl_handler(_, message):
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
             quote=True,
+            disable_web_page_preview=True,
         )
     except Exception as e:
         return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
