@@ -27,31 +27,39 @@
             "value": "1249591948 1883915673"
         },
         "SNACKLINK_KEY": {
-            "description": "Get API key from snacklink.id",
+            "description": "Get API key from snacklink.co/ref/AdamLuwis",
             "required": false
         },
         "ADTIVAL_KEY": {
-            "description": "Get API key from adtival.network",
+            "description": "Get API key from adtival.network/ref/YogaPranata",
             "required": false
         },
         "SHRINKADS_KEY": {
-            "description": "Get API key from shrinkads.com",
+            "description": "Get API key from shrinkads.com/ref/YogaPranata",
             "required": false
         },
         "DLINK_KEY": {
-            "description": "Get API key from droplink.co",
+            "description": "Get API key from droplink.co/ref/YogaPranata",
             "required": false
         },
         "ZAGL_KEY": {
-            "description": "Get API key from za.gl",
+            "description": "Get API key from zee.gl/ref/YogaPranata",
             "required": false
         },
         "YOUSHORT_KEY": {
-            "description": "Get API key from youshort.me",
+            "description": "Get API key from youshort.me/ref/YogaPranata",
+            "required": false
+        },
+        "SEARN_KEY": {
+            "description": "Get API key from shrinkearn.com/ref/YogaPranata",
+            "required": false
+        },
+        "CFLY_KEY": {
+            "description": "Get API key from clicksfly.com/ref/YogaPranata",
             "required": false
         },
         "PFL_KEY": {
-            "description": "Get API key from paid4link.com",
+            "description": "Get API key from paid4link.com/ref/zYxDevs",
             "required": false
         }
     },
