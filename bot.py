@@ -15,6 +15,8 @@ YOUSHORT_KEY = environ.get("YOUSHORT_KEY", None)
 PFL_KEY = environ.get("PFL_KEY", None)
 SEARN_KEY = environ.get("SEARN_KEY", None)
 CFLY_KEY = environ.get("CFLY_KEY", None)
+SHZON_KEY = environ.get("SHZON_KEY", None)
+CLKSH_KEY = environ.get("CLKSH_KEY", None)
 
 
 bot = Client(
@@ -34,10 +36,12 @@ I'm **MultiSafelinkBot**, Just send me a link with some command below.
 **Here is my command:**
 /adtival <link> - Get a shortlink using adtival
 /cfly <link> - Get a shortlink using clicksfly
+/clksh <link> - Get a shortlink using clksh
 /dlink <link> - Get a shortlink using droplink
 /sads <link> - Get a shortlink using shrinkads
 /sarn <link> - Get a shortlink using shrinkearn
 /snack <link> - Get a shortlink using snacklink
+/shzon <link> - Get a shortlink using shortzon
 /pfl <link> - Get a shortlink using paid4link
 /yshort <link> - Get a shortlink using yourshort
 /zagl <link> - Get a shortlink using zagl
@@ -284,6 +288,60 @@ async def cfly_handler(_, message):
     link = link.replace(" ", "")
     try:
         r = get(f"https://clicksfly.com/api?api={CFLY_KEY}&url={link}").json()
+        short_link = r["shortenedUrl"]
+        return await message.reply(
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
+            quote=True,
+            disable_web_page_preview=True,
+        )
+    except Exception as e:
+        return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
+
+
+@bot.on_message(filters.command("shzon") & ~filters.edited)
+async def shzon_handler(_, message):
+    if len(message.command) < 2:
+        return await message.reply("Give me url to short!")
+    if message.from_user.id not in AUTH_USERS:
+        return await message.reply(
+            "You are not allowed to use me!\n\nContact @Yoga_CIC"
+        )
+    if SHZON_KEY is None:
+        return await message.reply(
+            "Get `SHZON_KEY` from [shortzon](https://shortzon.com/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
+        )
+    link = message.text.split(None, 1)[1].strip()
+    link = link.replace(" ", "")
+    try:
+        r = get(f"https://shortzon.com/api?api={SHZON_KEY}&url={link}").json()
+        short_link = r["shortenedUrl"]
+        return await message.reply(
+            f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
+            quote=True,
+            disable_web_page_preview=True,
+        )
+    except Exception as e:
+        return await message.reply(f"Error: {e}\n\nReport to @Yoga_CIC", quote=True)
+
+
+@bot.on_message(filters.command("clksh") & ~filters.edited)
+async def clksh_handler(_, message):
+    if len(message.command) < 2:
+        return await message.reply("Give me url to short!")
+    if message.from_user.id not in AUTH_USERS:
+        return await message.reply(
+            "You are not allowed to use me!\n\nContact @Yoga_CIC"
+        )
+    if CLKSH_KEY is None:
+        return await message.reply(
+            "Get `CLKSH_KEY` from [clksh](https://clk.sh/ref/YogaPranata) and fill it on vars!",
+            disable_web_page_preview=True,
+        )
+    link = message.text.split(None, 1)[1].strip()
+    link = link.replace(" ", "")
+    try:
+        r = get(f"https://clk.sh/api?api={CLKSH_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
