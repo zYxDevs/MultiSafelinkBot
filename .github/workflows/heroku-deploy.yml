@@ -1,6 +1,6 @@
-name: Deploy
+name: Auto Deploy to Heroku
 
-on:
+on: workflow_dispatch
   push:
     branches:
       - master # can change to your branch name
