@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master # can change to your branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          env_file: "config.env"
+          procfile: "worker: python3 bot.py"
+        env:
+          HD_DLINK_KEY: ${{secrets.DLINK_KEY}}
+          HD_SNACKLINK_KEY: ${{secrets.SNACKLINK_KEY}}
+          HD_ADTIVAL_KEY: ${{secrets.ADTIVAL_KEY}}
+          HD_SHRINKADS_KEY: ${{secrets.SHRINKADS_KEY}}
+          HD_ZAGL_KEY: ${{secrets.ZAGL_KEY}}
+          HD_YOUSHORT_KEY: ${{secrets.YOUSHORT_KEY}}
+          HD_PFL_KEY: ${{secrets.PFL_KEY}}
+          HD_SEARN_KEY: ${{secrets.SEARN_KEY}}
+          HD_CFLY_KEY: ${{secrets.CFLY_KEY}}
+          HD_SHZON_KEY: ${{secrets.SHZON_KEY}}
+          HD_CLKSH_KEY: ${{secrets.CLKSH_KEY}}
