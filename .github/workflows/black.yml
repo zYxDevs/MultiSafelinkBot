@@ -22,7 +22,7 @@ jobs:
           body: Automated code formatting.
           labels: ⚫️ black
           branch: autofix
-          committer: zYxDevs<45356875+zYxDevs@users.noreply.github.com>
+          committer: zYxDevs<zyxdevs@otakufanshare.eu.org>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           delete-branch: true
