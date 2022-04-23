@@ -58,6 +58,14 @@
             "description": "Get API key from clicksfly.com/ref/YogaPranata",
             "required": false
         },
+        "SHZON_KEY": {
+            "description": "Get API key from shortzon.com/ref/YogaPranata",
+            "required": false
+        },
+        "CLKSH_KEY": {
+            "description": "Get API key from clk.sh/ref/YogaPranata",
+            "required": false
+        },
         "PFL_KEY": {
             "description": "Get API key from paid4link.com/ref/zYxDevs",
             "required": false
