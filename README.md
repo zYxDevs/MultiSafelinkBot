@@ -6,6 +6,38 @@ Make short link by using many safelink API services.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zYxDevs/MultiSafelinkBot)
 
+#### Local/VPS
+
+<details>
+    <summary>See more...</summary>
+
+Update your package
+```
+sudo apt update
+```
+
+Install requirements package
+```
+sudo apt install -y python3 pip git
+```
+
+Clone repo to local
+```
+git clone https://github.com/zYxDevs/MultiSafelinkBot && cd MultiSafelinkBot
+```
+
+Install bot requirements
+```
+pip install -r requirements.txt
+```
+
+Run the bot
+```
+python3 bot.py
+```
+
+</details>
+
 ##### Required Variables
 
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
