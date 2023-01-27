@@ -1,3 +1,4 @@
+import cloudscraper
 from os import environ
 from requests import get
 from pyrogram import Client, filters
@@ -18,6 +19,7 @@ CFLY_KEY = environ.get("CFLY_KEY", None)
 SHZON_KEY = environ.get("SHZON_KEY", None)
 CLKSH_KEY = environ.get("CLKSH_KEY", None)
 
+cfpass = cloduscraper.create_scraper() #bypassing cloudflare
 
 bot = Client(
     ":memory:",
@@ -233,7 +235,7 @@ async def pfl_handler(_, message):
     link = message.text.split(None, 1)[1].strip()
     link = link.replace(" ", "")
     try:
-        r = get(f"https://paid4link.com/api?api={PFL_KEY}&url={link}").json()
+        r = cfpass.get(f"https://paid4link.com/api?api={PFL_KEY}&url={link}").json()
         short_link = r["shortenedUrl"]
         return await message.reply(
             f"""Click to copy:\n\n<code>{short_link}</code>.\n\nHere is your [short link]({short_link}).""",
