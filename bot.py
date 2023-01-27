@@ -19,7 +19,7 @@ CFLY_KEY = environ.get("CFLY_KEY", None)
 SHZON_KEY = environ.get("SHZON_KEY", None)
 CLKSH_KEY = environ.get("CLKSH_KEY", None)
 
-cfpass = cloduscraper.create_scraper() #bypassing cloudflare
+cfpass = cloduscraper.create_scraper()  # bypassing cloudflare
 
 bot = Client(
     ":memory:",
